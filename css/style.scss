@@ -1,0 +1,116 @@
+body {
+  background: #DAE0E6;
+  font-family: 'Montserrat', 'M PLUS Rounded 1c', sans-serif;
+}
+
+.container {
+  width: 450px;
+  margin: 10px auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+
+  span {
+    font-size: 11px;
+    padding: 0 0 0 10px;
+  }
+}
+
+#title {
+  text-align: center;
+  letter-spacing: 2.5px;
+}
+
+#register {
+  width: 250px;
+  height: 30px;
+  margin-bottom: 20px;
+  border-color: #CCCCCC;
+}
+
+#submit {
+  font-weight: bold;
+  margin: 0 10px;
+  padding: 5px 20px;
+  border: none;
+  background: #00AEEF;
+  border-bottom: solid 3px #004B66;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#submit:focus {
+  outline: 0;
+}
+
+#submit:active {
+  transform: translateY(3px);
+  border-bottom: none;
+}
+
+#tasks, #comps {
+  text-align: left;
+  margin: 30px;
+}
+
+#task, #comp {
+  background: pink;
+  display: inline-block;
+  padding: 5px 10px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #333;
+}
+
+#todos, #complete {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo, .comptodo {
+  width: 400px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 7px 0 7px 40px;
+  border: 1px solid #CCCCCC;
+  text-align: left;
+  position: relative;
+}
+
+.checkbox {
+  position: absolute;
+  top: 30%;
+  left: 10px;
+  margin: 0 10px 0 5px;
+}
+
+.delete {
+  position: absolute;
+  top: 20%;
+  right: 8px;
+  text-align: right;
+  border: none;
+  padding: 10px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.todo::after {
+  font-family: "Font Awesome 5 Free";
+  font-size: 18px;
+  content: '\f2ed';
+  color: #FF922B;
+  text-align: right;
+  position: absolute;
+  top: 20%;
+  right: 10px;
+  z-index: 0;
+}
+
+.active {
+  opacity: 0.3;
+}
