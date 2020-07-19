@@ -18,7 +18,7 @@
 <body>
   <div id="app">
     <section class="container">
-      <h1 id="title">ToDo List<span>※作成中</span></h1>
+      <h1 id="title">ToDo List</h1>
       <input id="register"
             type="text"
             v-model="newItemTitle"
@@ -29,7 +29,7 @@
         <div id="task">Task</div>
         <ul id="todos">
           <li class="todo" v-for="(item, index) in items" :class="{done: item.isChecked}">
-            <input type="checkbox" @click="doneTodo(index)" v-model="item.isChecked"> {{ item.title }}
+            <input type="checkbox" @click.prevent="doneTodo(index)" v-model="item.isChecked"> {{ item.title }}
             <button class="delete" @click="deleteTodo_item(index)"></button>
           </li>
         </ul>
@@ -39,7 +39,7 @@
         <div id="comp">Done</div>
         <ul id="complete">
           <li class="todo" v-for="(done, index) in dones" :class="{done: done.isChecked}">
-            <input type="checkbox" @click="returnTodo(index)" v-model="done.isChecked"> {{ done.title }}
+            <input type="checkbox" @click.prevent="returnTodo(index)" v-model="done.isChecked"> {{ done.title }}
             <button class="delete" @click="deleteTodo_done(index)"></button>
           </li>
         </ul>
