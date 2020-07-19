@@ -8,6 +8,12 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <title>ToDo</title>
+  <style>
+    .done {
+      text-decoration: line-through;
+      opacity: 0.3;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
@@ -23,8 +29,9 @@
         <div id="task">Task</div>
         <ul id="todos">
           <li v-for="(item, index) in items">
-            <label v-on:click="deleteTodo(index)">
-              <input type="checkbox" v-model="item.isChecked" v-on:change="saveTodo" v-bind:class="{active: item.isChecked}"> {{ item.title }}
+            <label v-on:click="doneTodo(index)" v-bind:class="{done: item.isChecked}">
+              <input type="checkbox" v-model="item.isChecked" v-on:change="saveTodo"> {{ item.title }}
+              <button v-on:click="deleteTodo(index)">Delete</button>
             </label>
           </li>
         </ul>
@@ -33,9 +40,10 @@
         <div id="comps">
         <div id="comp">Done</div>
         <ul id="complete">
-          <li v-for="done in dones">
-            <label>
-              <input type="checkbox" v-model="done.isChecked" v-on:change="saveTodo" v-bind:class="{active: done.isChecked}"> {{ done.title }}
+          <li v-for="(done, index) in dones">
+            <label v-on:click="returnTodo(index)" v-bind:class="{done: done.isChecked}">
+              <input type="checkbox" v-model="done.isChecked" v-on:change="saveTodo"> {{ done.title }}
+              <button v-on:click="deleteTodo(index)">Delete</button>
             </label>
           </li>
         </ul>
