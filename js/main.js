@@ -5,6 +5,7 @@
     el: '#app',
     data: {
       newItemTitle: '', //入力欄の初期値
+      isChecked: false,
       items: [],
       dones: [],
   },
@@ -35,15 +36,11 @@
         isChecked: false
       });
     },
-    deleteTodo(index) {
-      if (items) {
-      let deleteTodo = this.items[index].title;
-      this.items.slice(index, 1);
-      }
-      if (dones) {
-      let deleteTodo = this.dones[index].title;
-      this.dones.slice(index, 1);
-      }
+    deleteTodo_item(index) {
+      this.items.splice(index, 1);
+    },
+    deleteTodo_done(index) {
+      this.dones.splice(index, 1);
     },
   }
 })

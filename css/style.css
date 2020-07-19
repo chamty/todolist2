@@ -76,7 +76,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0 auto;
-  padding: 7px 0 7px 40px;
+  padding: 7px 0 7px 7px;
   border: 1px solid #CCCCCC;
   text-align: left;
   position: relative;
