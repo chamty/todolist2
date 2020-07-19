@@ -5,7 +5,6 @@
     el: '#app',
     data: {
       newItemTitle: '', //入力欄の初期値
-      isChecked: false,
       items: [],
       dones: [],
   },
@@ -19,7 +18,6 @@
         isChecked: false
       });
       this.newItemTitle = ''; //入力欄を初期値に戻す
-      this.saveTodo(); //ブラウザに保存
     },
     doneTodo(index) {
       let doneTodo = this.items[index].title;
@@ -28,7 +26,6 @@
         title: doneTodo,
         isChecked: true
       });
-      this.saveTodo(); //ブラウザに保存
     },
     returnTodo(index) {
       let returnTodo = this.dones[index].title;
@@ -47,18 +44,6 @@
       let deleteTodo = this.dones[index].title;
       this.dones.slice(index, 1);
       }
-    },
-    saveTodo() {
-      localStorage.setItem('items', JSON.stringify(this.items));
-    },
-    loadTodo() {
-      this.items = JSON.parse( localStorage.getItem('items') );
-      if( !this.items ){
-        this.items = [];
-      }
-    },
-    mounted() {
-      this.loadTodo();
     },
   }
 })

@@ -30,7 +30,7 @@
         <ul id="todos">
           <li v-for="(item, index) in items">
             <label v-on:click="doneTodo(index)" v-bind:class="{done: item.isChecked}">
-              <input type="checkbox" v-model="item.isChecked" v-on:change="saveTodo"> {{ item.title }}
+              <input type="checkbox" v-bind:value="item.isChecked"> {{ item.title }}
               <button v-on:click="deleteTodo(index)">Delete</button>
             </label>
           </li>
@@ -42,7 +42,7 @@
         <ul id="complete">
           <li v-for="(done, index) in dones">
             <label v-on:click="returnTodo(index)" v-bind:class="{done: done.isChecked}">
-              <input type="checkbox" v-model="done.isChecked" v-on:change="saveTodo"> {{ done.title }}
+              <input type="checkbox" v-bind:value="done.isChecked"> {{ done.title }}
               <button v-on:click="deleteTodo(index)">Delete</button>
             </label>
           </li>
