@@ -48,5 +48,28 @@
     </section>
   </div>
   <script src="js/main.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAmHse59bOCefEPOBqTPOOTM6ivGAP4Rnc",
+    authDomain: "todolist-vue-527ec.firebaseapp.com",
+    databaseURL: "https://todolist-vue-527ec.firebaseio.com",
+    projectId: "todolist-vue-527ec",
+    storageBucket: "todolist-vue-527ec.appspot.com",
+    messagingSenderId: "1033034282311",
+    appId: "1:1033034282311:web:c83fcee0b25d0a5fba4862",
+    measurementId: "G-2VFTFZFZVH"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 </body>
 </html>
